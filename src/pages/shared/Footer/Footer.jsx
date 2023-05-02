@@ -1,10 +1,11 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div>
-            <h2>This is Footer</h2>
-        </div>
+        <Container className='mt-5 bg-secondary'>
+            <h2 className='text-center p-5'>@Copyright</h2>
+        </Container>
     );
 };
 
