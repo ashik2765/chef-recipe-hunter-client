@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ProPhoto from '../../../assets/react.svg'
+import ProPhoto from '../../assets/react.svg'
 
 const NavBar = () => {
   return (

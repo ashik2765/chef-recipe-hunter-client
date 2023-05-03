@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useRouteError } from 'react-router-dom';
-import ErrorImage from './assets/error.png'
+import ErrorImage from '../../assets/error.png'
 import { Button, Container } from 'react-bootstrap';
 
 const ErrorPage = () => {

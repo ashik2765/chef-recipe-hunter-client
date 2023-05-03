@@ -1,7 +1,8 @@
 import React from 'react';
-import NavBar from '../pages/shared/Header/NavBar';
+import NavBar from '../pages/Header/NavBar';
 import { Outlet } from 'react-router-dom';
-import Footer from '../pages/shared/Footer/Footer';
+import Footer from '../pages/Footer/Footer';
+
 
 const LoginLayout = () => {
     return (
@@ -9,6 +10,7 @@ const LoginLayout = () => {
             <NavBar></NavBar>
             <Outlet></Outlet>
             <Footer></Footer>
+            
         </div>
     );
 };

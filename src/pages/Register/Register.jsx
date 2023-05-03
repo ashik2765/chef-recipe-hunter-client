@@ -7,17 +7,17 @@ const Register = () => {
         <Container className='w-25 mx-auto mt-5 bg-body-secondary'>
       <h4 className='mt-5'>Please Register</h4>
       <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="Name">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" name='name' placeholder="Enter Your Name" required />
           
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="photo">
           <Form.Label>Photo URL</Form.Label>
           <Form.Control type="text" name='photo' placeholder="Photo URL" required />
           
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name='email' placeholder="Enter email" required />
           
