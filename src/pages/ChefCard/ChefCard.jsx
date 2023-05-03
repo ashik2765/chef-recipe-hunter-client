@@ -1,7 +1,7 @@
 import React from 'react';
 import './ChefCard.css';
 import { Button, Card } from 'react-bootstrap';
-import { FaRegStar } from 'react-icons/fa';
+
 
 const ChefCard = ({chef}) => {
     const {chef_name,chef_picture,id,likes,number_of_recipes,view_recipes_button,years_of_experience,bio}= chef;
@@ -25,7 +25,7 @@ const ChefCard = ({chef}) => {
             Experience: {years_of_experience} Years
           </Card.Text>
           <Card.Text>
-            Add favorite: <FaRegStar></FaRegStar>
+            <Button>Add favorite</Button>
           </Card.Text>
         </Card.Body>
         <Card.Footer>

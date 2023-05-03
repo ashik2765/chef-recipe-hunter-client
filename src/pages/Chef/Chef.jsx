@@ -12,17 +12,19 @@ const Chef = () => {
     },[])
     console.log(chefdata)
     return (
+
         <Container className='pt-5'>
-            <h2 className='text-center text-bold py-4'>Our Chefs</h2>
-            <div className='chef-container'>
-            {
-                chefdata.map(chef =><ChefCard
-                key={chef.id}
-                chef={chef}
-                ></ChefCard>)
-            }
-            </div>
-        </Container>
+  <h2 className='text-center text-bold py-4'>Our Chefs</h2>
+  <div className='row'>
+    {
+      chefdata.map(chef =>
+        <div key={chef.id} className='col-lg-4 col-sm-12 mb-4'>
+          <ChefCard chef={chef} />
+        </div>
+      )
+    }
+  </div>
+</Container>
     );
 };
 
