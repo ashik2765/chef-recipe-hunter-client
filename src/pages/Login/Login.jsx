@@ -1,15 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGithub,FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider';
 
 
 const Login = () => {
   const {signIn}= useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [successful,setSuccessful] = useState();
   const [Error,setError] = useState();
+
   const handleLogin = (event)=>{
     event.preventDefault();
     const form = event.target;
@@ -22,10 +24,11 @@ const Login = () => {
       const loggedUser = result.user;
       console.log(loggedUser)
       setSuccessful('login successful')
+      navigate('/chef')
     })
     .catch(error =>{
-      console.log(error)
-      setError('Try Agin');
+      
+      setError(error.message);
     })
 
   }
