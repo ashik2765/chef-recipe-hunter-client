@@ -6,7 +6,7 @@ import './Chef.css';
 const Chef = () => {
     const [chefdata,setChefdata] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/chefs')
+        fetch('https://the-tabbakh-server-ashik2765.vercel.app/chefs')
         .then(res => res.json())
         .then(data => setChefdata(data))
     },[])
