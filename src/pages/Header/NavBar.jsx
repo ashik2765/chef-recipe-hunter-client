@@ -23,9 +23,9 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
-              <Nav.Link className='text-primary' to='/'>Home</Nav.Link>
-              <Nav.Link href="#about">Blog</Nav.Link>
-              <Nav.Link href="#career">Career</Nav.Link>
+               <Link to='/'>Home</Link>
+              <Link to='/blog'>Blogs</Link>
+              
 
             </Nav>
             <Nav className='flex align-items-center'>

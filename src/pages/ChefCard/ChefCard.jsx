@@ -27,7 +27,7 @@ const ChefCard = ({chef}) => {
         </Card.Body>
         <Card.Footer>
         <div className='d-flex'>
-        <Link to='/recipeDetails'>
+        <Link to={`/recipe/${id}`}>
         <Button className='flex-grow-1' variant="secondary">View Recipes</Button>
         </Link>
         

@@ -1,65 +1,78 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button} from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Image, Table } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
+import {toast } from 'react-toastify';
+
 
 
 const RecipeDetails = () => {
-    
-    return (
-        <Container className="py-5">
-      <Row>
-        <Col md={4}>
-          <Card className="mb-3">
-            <Card.Img variant="top" src='' />
-            <Card.Body>
-              <Card.Title>Ashikur rahman</Card.Title>
-              <Card.Text>he is a web developer</Card.Text>
-              <Card.Text>
-                <strong>Likes: </strong>
-                100
-              </Card.Text>
-              <Card.Text>
-                <strong>Recipes: </strong>
-                rice,meat
-              </Card.Text>
-              <Card.Text>
-                <strong>Years of Experience: </strong>
-                20
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={8}>
-          <h2 className="text-center mb-4">Ashik's Recipes</h2>
+  const chefdata = useLoaderData();
+  console.log(chefdata)
+  const { chef_name, chef_picture, id, likes, number_of_recipes, view_recipes_button, years_of_experience, bio, recipe_name, ingredients, instructions, recipes,recipe_table,recipe1,recipe2,recipe3,Ratings } = chefdata;
+  const handlefavorite =()=>{
+      console.log('it is working')
+  }
+
+  return (
+    <div>
+      <div>
+        <Container className="banner">
           <Row>
-            
-              <Col md={4}>
-                <Card className="mb-3">
-                  <Card.Body>
-                    <Card.Title>fish fry</Card.Title>
-                    <Card.Text>
-                      <strong>Ingredients: </strong>
-                      fish
-                    </Card.Text>
-                    <Card.Text>
-                      <strong>Cooking Method: </strong>
-                      method
-                    </Card.Text>
-                    <Card.Text>
-                      <strong>Rating: </strong>
-                      Ratings
-                    </Card.Text>
-                    <Button variant="primary" className="mr-2">
-                      Add to Favorites
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-          
+            <Col lg={6}>
+              <Image src={chef_picture} fluid />
+            </Col>
+            <Col lg={6} className="d-flex flex-column justify-content-center align-items-center">
+              <div className="info-card text-center">
+                <h2>{chef_name}</h2>
+                <p>{bio}</p>
+                <p><strong>{likes} Likes</strong></p>
+                <p><strong>Experience:</strong>{years_of_experience}Years</p>
+                <p><strong>Recipes:</strong> {recipe1},{recipe2},{recipe3}</p>
+                <Button variant="primary" size="lg">Follow</Button>
+              </div>
+            </Col>
           </Row>
-        </Col>
-      </Row>
-    </Container>
-    );
+        </Container>
+      </div>
+      <div>
+     <Container className='pt-5'>
+      <h2 className='text-center px-4'>Chef's Special</h2>
+     <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>{recipe1}</th>
+          <th>{recipe2}</th>
+          <th>{recipe3}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ingredients:</strong> {ingredients}</td>
+          <td><strong>Ingredients:</strong> {ingredients}</td>
+          <td><strong>Ingredients:</strong> {ingredients}</td>
+        </tr>
+        <tr>
+          <td><strong>Cooking Method: </strong> {instructions}</td>
+          <td><strong>Cooking Method: </strong> {instructions}</td>
+          <td><strong>Cooking Method: </strong> {instructions}</td>
+        </tr>
+        <tr>
+          <td><strong>Ratings: </strong> {Ratings}</td>
+          <td><strong>Ratings: </strong> {Ratings}</td>
+          <td><strong>Ratings: </strong> {Ratings}</td>
+        </tr>
+        <tr>
+          <td><Button>Add Favorite</Button></td>
+          <td><Button>Add Favorite</Button></td>
+          <td><Button>Add Favorite</Button></td>
+        </tr>
+      </tbody>
+    </Table>
+     </Container>
+      </div>
+
+    </div>
+  );
 };
 
 export default RecipeDetails;

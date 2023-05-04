@@ -10,7 +10,7 @@ const Chef = () => {
         .then(res => res.json())
         .then(data => setChefdata(data))
     },[])
-    console.log(chefdata)
+    
     return (
 
         <Container className='pt-5'>
