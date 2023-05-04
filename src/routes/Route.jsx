@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import LoginLayout from "../Layouts/LoginLayout";
 import Register from "../pages/Register/Register";
 import Chef from "../pages/Chef/Chef";
+import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
 
 const router = createBrowserRouter([
     {
@@ -34,8 +35,12 @@ const router = createBrowserRouter([
             {
                 path:'/chef',
                 element:<Chef></Chef>
-            }
+            },
         ]
+    },
+    {
+        path:'/recipeDetails',
+        element:<RecipeDetails></RecipeDetails>
     }
     
    

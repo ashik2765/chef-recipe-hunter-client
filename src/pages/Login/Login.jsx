@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGithub,FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../AuthProvider';
+
 
 const Login = () => {
+  // const {signIn}= useContext(AuthContext);
+
+  // const handleLogin = (event)=>{
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   const email = form.email.value;
+  //   const password = form.password.value;
+  //   console.log(email,password)
+
+  // }
+  
   return (
     <Container className='w-25 mx-auto mt-5'>
       <h4 className='mt-5'>Please Login</h4>
