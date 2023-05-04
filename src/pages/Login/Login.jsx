@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGithub,FaGoogle } from 'react-icons/fa';
@@ -8,12 +8,25 @@ import { AuthContext } from '../../AuthProvider';
 const Login = () => {
   const {signIn}= useContext(AuthContext);
 
+  const [successful,setSuccessful] = useState();
+  const [Error,setError] = useState();
   const handleLogin = (event)=>{
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email,password)
+
+    signIn(email,password)
+    .then(result =>{
+      const loggedUser = result.user;
+      console.log(loggedUser)
+      setSuccessful('login successful')
+    })
+    .catch(error =>{
+      console.log(error)
+      setError('Try Agin');
+    })
 
   }
   
@@ -34,11 +47,11 @@ const Login = () => {
         <Form.Group className="mb-3" controlId="Checkbox">
           <Form.Check type="checkbox" label="Accept Terms And Condition" />
           <Form.Text className="text-danger">
-            We'll never share your email with anyone else.
+            {Error}
           </Form.Text>
           <br />
           <Form.Text className="text-success">
-            We'll never share your email with anyone else.
+            {successful}
           </Form.Text>
           <div className='text-center'>
           <Button className='w-100' variant="outline-secondary"><FaGoogle></FaGoogle><span className='ms-2'>Login With Google</span></Button> 

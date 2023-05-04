@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ProPhoto from '../../assets/react.svg'
+import { AuthContext } from '../../AuthProvider';
 
 const NavBar = () => {
+  const {user,logOut} = useContext(AuthContext) ;
+
+  const handleLogOut =()=>{
+    logOut()
+      .then()
+      .catch(error => console.log(error))
+  }
   return (
     <Container className='h-25'>
 
@@ -21,9 +29,17 @@ const NavBar = () => {
 
             </Nav>
             <Nav className='flex align-items-center'>
-              <Image className='me-4' src={ProPhoto} roundedCircle />
+             
 
-              <Link to="/login"><Button variant="secondary">Login</Button></Link>
+              
+              { user?
+                  <div>
+                     <Image className='me-4' src={ProPhoto} roundedCircle />
+                    <Link onClick={handleLogOut}><Button variant="secondary">LogOut</Button></Link>
+                  </div>:
+                  <Link to="/login"><Button variant="secondary">Login</Button></Link>
+              }
+              
 
             </Nav>
           </Navbar.Collapse>
