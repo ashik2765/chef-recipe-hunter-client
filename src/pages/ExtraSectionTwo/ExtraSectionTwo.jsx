@@ -10,7 +10,7 @@ const ExtraSectionTwo = () => {
         <Col lg={4} md={6} sm={12} className="my-3">
           <Card>
             <Card.Body>
-              <Card.Title>John Smith</Card.Title>
+              <Card.Title>Guo Meimei</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">5/5 stars</Card.Subtitle>
               <Card.Text>
                 "This recipe was amazing! The flavors were perfectly balanced and the instructions were easy to follow. I'll definitely be making this again!"
@@ -22,7 +22,7 @@ const ExtraSectionTwo = () => {
         <Col lg={4} md={6} sm={12} className="my-3">
           <Card>
             <Card.Body>
-              <Card.Title>Jane Doe</Card.Title>
+              <Card.Title>Wang Daming</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">4/5 stars</Card.Subtitle>
               <Card.Text>
                 "This recipe was good, but it needed a little more spice for my taste. Overall, it was easy to make and tasted great."
@@ -34,7 +34,7 @@ const ExtraSectionTwo = () => {
         <Col lg={4} md={6} sm={12} className="my-3">
           <Card>
             <Card.Body>
-              <Card.Title>Jane Doe</Card.Title>
+              <Card.Title>Zhang Wei</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">4/5 stars</Card.Subtitle>
               <Card.Text>
                 "This recipe was good, but it needed a little more spice for my taste. Overall, it was easy to make and tasted great."

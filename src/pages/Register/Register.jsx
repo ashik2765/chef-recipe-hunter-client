@@ -6,6 +6,8 @@ import { AuthContext } from '../../AuthProvider';
 const Register = () => {
 
   const {createUser}= useContext(AuthContext);
+  const [Error,setError] = useState()
+  const[success,setSuccess] = useState()
 
   
   const handleRegistration = (event)=>{
@@ -16,14 +18,25 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name,photo,email,password)
-    createUser(email,password)
+    setError('')
+    setSuccess('')
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
+      setError("Password must");
+      return;
+    }
+    if((name, email, password)){
+      createUser(email,password)
     .then(result => {
       const createdUser =result.user;
       console.log(createdUser);
+      setSuccess('Registeration Successful')
+      
     })
     .catch(error =>{
-      console.log(error);
+      setError(error.message);
     })
+    }
+    
   }
     return (
         <Container className='w-25 mx-auto mt-5 bg-body-secondary'>
@@ -52,11 +65,11 @@ const Register = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
           <Form.Text className="text-danger">
-            We'll never share your email with anyone else.
+           {Error}
           </Form.Text>
           <br />
           <Form.Text className="text-success">
-            We'll never share your email with anyone else.
+            {success}
           </Form.Text>
         </Form.Group>
         
