@@ -1,12 +1,4 @@
-.navlink{
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: larger;
-    color: black;
-}
-.active {
-    color: blue;
-    font-weight: bold;
+a{  color: black;
     text-decoration: none;
     margin-left: 20px;
     font-size: larger;

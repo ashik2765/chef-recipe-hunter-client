@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import ProPhoto from '../../assets/customer1.jpg'
 import { AuthContext } from '../../AuthProvider';
 import './NavBar.css';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const NavBar = () => {
   const {user,logOut} = useContext(AuthContext) ;
@@ -24,8 +25,9 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
-              <NavLink className='active' to='/'>Home</NavLink>
-              <Link className='navlink' to='/blog'>Blogs</Link>
+              <ActiveLink to='/'>Home</ActiveLink>
+              <ActiveLink to='/blog'>Blogs</ActiveLink>
+              <ActiveLink to='/recipe'>About</ActiveLink>
               
 
             </Nav>

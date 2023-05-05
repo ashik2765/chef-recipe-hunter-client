@@ -8,12 +8,15 @@ import { signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
   const {signIn,auth,Googleprovider,GithubProvider}= useContext(AuthContext);
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/'
 
+
   const [successful,setSuccessful] = useState();
   const [Error,setError] = useState();
+  
 
   const handleLogin = (event)=>{
     event.preventDefault();
