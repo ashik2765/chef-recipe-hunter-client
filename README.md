@@ -1,17 +1,17 @@
 # Tabbakh
 
-## [Github Link Client site](https://classroom.github.com/a/ym3y0_ro)
-Click here for the Client site repo: [https://classroom.github.com/a/ym3y0_ro](https://classroom.github.com/a/ym3y0_ro)
+## [Github Link Client site](https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-ashik2765)
+Click here for the Client site repo: [https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-ashik2765](https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-ashik2765)
 
 
 
-## [Github Link Server Site](https://classroom.github.com/a/1Xt5Fixs)
-Click here for the Server Site repo: [https://classroom.github.com/a/1Xt5Fixs](https://classroom.github.com/a/1Xt5Fixs)
+## [Github Link Server Site](https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-ashik2765)
+Click here for the Server Site repo: [https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-ashik2765](https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-ashik2765)
 
 
 
-## [Client Site Live Link](https://classroom.github.com/a/1Xt5Fixs)
-Click here for the Live Link: [https://classroom.github.com/a/1Xt5Fixs](https://classroom.github.com/a/1Xt5Fixs)
+## [Client Site Live Link](https://resplendent-sunshine-7655c6.netlify.app/chef)
+Click here for the Live Link: [https://resplendent-sunshine-7655c6.netlify.app/chef](https://resplendent-sunshine-7655c6.netlify.app/chef)
 
 
 ## [Server Site Vercel Link](https://classroom.github.com/a/1Xt5Fixs)
