@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Image, Table } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Toast from 'react-bootstrap/Toast';
 
 
 
 
 const RecipeDetails = () => {
   const chefdata = useLoaderData();
-  const [clicked1,setClicked1]= useState(false)
-  const [clicked2,setClicked2]= useState(false)
-  const [clicked3,setClicked3]= useState(false)
-  
-  const { chef_name, chef_picture,likes, years_of_experience, bio, ingredients, instructions,recipe1,recipe2,recipe3,Ratings } = chefdata;
+  const [showA, setShowA] = useState(false);
+  const [clicked1, setClicked1] = useState(false)
+  const [clicked2, setClicked2] = useState(false)
+  const [clicked3, setClicked3] = useState(false)
 
-  const handleAddFavorite1 = ()=>{
+  const { chef_name, chef_picture, likes, years_of_experience, bio, ingredients, instructions, recipe1, recipe2, recipe3, Ratings } = chefdata;
+
+  const handleAddFavorite1 = () => {
     setClicked1(true)
+    setShowA(!showA)
   }
-  const handleAddFavorite2 = ()=>{
+  const handleAddFavorite2 = () => {
     setClicked2(true)
+    setShowA(!showA)
   }
-  const handleAddFavorite3 = ()=>{
+  const handleAddFavorite3 = () => {
     setClicked3(true)
-  toast.success('Added to favorites!', { position: toast.POSITION.BOTTOM_RIGHT });
+    setShowA(!showA)
+
+
   }
+
   return (
     <div>
       <div>
@@ -47,42 +52,46 @@ const RecipeDetails = () => {
         </Container>
       </div>
       <div>
-     <Container className='pt-5'>
-      <h2 className='text-center px-4'>Chef's Special</h2>
-     <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>{recipe1}</th>
-          <th>{recipe2}</th>
-          <th>{recipe3}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Ingredients:</strong> {ingredients}</td>
-          <td><strong>Ingredients:</strong> {ingredients}</td>
-          <td><strong>Ingredients:</strong> {ingredients}</td>
-        </tr>
-        <tr>
-          <td><strong>Cooking Method: </strong> {instructions}</td>
-          <td><strong>Cooking Method: </strong> {instructions}</td>
-          <td><strong>Cooking Method: </strong> {instructions}</td>
-        </tr>
-        <tr>
-          <td><strong>Ratings: </strong> {Ratings}</td>
-          <td><strong>Ratings: </strong> {Ratings}</td>
-          <td><strong>Ratings: </strong> {Ratings}</td>
-        </tr>
-        <tr>
-          <td><Button onClick={handleAddFavorite1} disabled={clicked1}>Add Favorite</Button></td>
-          <td><Button onClick={handleAddFavorite2} disabled={clicked2}>Add Favorite</Button></td>
-          <td><Button onClick={handleAddFavorite3} disabled={clicked3}>Add Favorite</Button></td>
-        </tr>
-      </tbody>
-    </Table>
-     </Container>
+        <Container className='pt-5'>
+          <h2 className='text-center px-4'>Chef's Special</h2>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>{recipe1}</th>
+                <th>{recipe2}</th>
+                <th>{recipe3}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ingredients:</strong> {ingredients}</td>
+                <td><strong>Ingredients:</strong> {ingredients}</td>
+                <td><strong>Ingredients:</strong> {ingredients}</td>
+              </tr>
+              <tr>
+                <td><strong>Cooking Method: </strong> {instructions}</td>
+                <td><strong>Cooking Method: </strong> {instructions}</td>
+                <td><strong>Cooking Method: </strong> {instructions}</td>
+              </tr>
+              <tr>
+                <td><strong>Ratings: </strong> {Ratings}</td>
+                <td><strong>Ratings: </strong> {Ratings}</td>
+                <td><strong>Ratings: </strong> {Ratings}</td>
+              </tr>
+              <tr>
+                <td><Button onClick={handleAddFavorite1} disabled={clicked1}>Add Favorite</Button></td>
+                <td><Button onClick={handleAddFavorite2} disabled={clicked2}>Add Favorite</Button></td>
+                <td><Button onClick={handleAddFavorite3} disabled={clicked3}>Add Favorite</Button></td>
+              </tr>
+            </tbody>
+          </Table>
+        </Container>
       </div>
-
+      <div>
+        <Toast show={showA} onClose={handleAddFavorite1} delay={3000} autohide>
+          <Toast.Body className='text-success text-center'>Added To Favorite Suceessfully</Toast.Body>
+        </Toast>
+      </div>
     </div>
   );
 };
