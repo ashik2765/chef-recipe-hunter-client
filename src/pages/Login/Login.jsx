@@ -3,13 +3,13 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub,FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider';
+import { signInWithPopup } from 'firebase/auth';
 
 
 const Login = () => {
-  const {signIn}= useContext(AuthContext);
+  const {signIn,auth,Googleprovider}= useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log('login page',location)
   const from = location.state?.from?.pathname || '/'
 
   const [successful,setSuccessful] = useState();
@@ -34,6 +34,18 @@ const Login = () => {
       setError(error.message);
     })
 
+  }
+  const handleGoogleSignIn =()=>{
+    setError('')
+    setSuccessful('')
+    signInWithPopup(auth,Googleprovider)
+    .then(result =>{
+      const googleLoggedUser = result.user;
+      setSuccessful('Google SignIn successfull')
+    })
+    .catch(error =>{
+      setError(error.message)
+    })
   }
   
   return (
@@ -60,7 +72,7 @@ const Login = () => {
             {successful}
           </Form.Text>
           <div className='text-center'>
-          <Button className='w-100' variant="outline-secondary"><FaGoogle></FaGoogle><span className='ms-2'>Login With Google</span></Button> 
+          <Button onClick={handleGoogleSignIn} className='w-100' variant="outline-secondary"><FaGoogle></FaGoogle><span className='ms-2'>Login With Google</span></Button> 
           <h4 className='text-center'>Or</h4>
           <Button className='w-100' variant="outline-secondary"><FaGithub></FaGithub><span className='ms-2'>Login With Github</span></Button>
           </div>
