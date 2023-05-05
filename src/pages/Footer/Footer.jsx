@@ -8,7 +8,7 @@ const Footer = () => {
         <Row>
           <Col md={4} className="text-center text-md-start">
             <h4>About Us</h4>
-            <p className="m-0">Chef's Recipes is a community-driven recipe sharing platform, created by food lovers for food lovers. Our mission is to inspire home cooks to try new recipes and techniques, and share their own culinary creations with others.</p>
+            <p className="m-0">Tabbakh is a community-driven recipe sharing platform, created by food lovers for food lovers. Our mission is to inspire home cooks to try new recipes and techniques, and share their own culinary creations with others.</p>
           </Col>
           <Col md={4} className="text-center">
             <h4>Follow Us</h4>
@@ -26,9 +26,9 @@ const Footer = () => {
           </Col>
           <Col md={4} className="text-center text-md-end">
             <h4>Contact Us</h4>
-            <p className="m-0">Email: info@chefsrecipes.com</p>
+            <p className="m-0">Email: info@tabbakh.com</p>
             <p className="m-0">Phone: +1 (555) 123-4567</p>
-            <p className="m-0">Address: 123 Main St, Anytown USA</p>
+            <p className="m-0">Address: 123 Main St,china</p>
           </Col>
         </Row>
         <Row>

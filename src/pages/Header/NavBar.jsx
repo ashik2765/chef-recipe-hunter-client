@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import ProPhoto from '../../assets/react.svg'
+import ProPhoto from '../../assets/customer1.jpg'
 import { AuthContext } from '../../AuthProvider';
 import './NavBar.css';
 
@@ -35,7 +35,7 @@ const NavBar = () => {
               
               { user?
                   <div>
-                     <Image className='me-4' src={ProPhoto} roundedCircle />
+                     <Image className='me-4 w-25 h-25' src={ProPhoto} roundedCircle />
                     <Link onClick={handleLogOut}><Button variant="warning">LogOut</Button></Link>
                   </div>:
                   <Link to="/login"><Button variant="warning">Login</Button></Link>
