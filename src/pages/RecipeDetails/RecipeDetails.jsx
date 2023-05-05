@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Image, Table } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Toast from 'react-bootstrap/Toast';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 
 
@@ -74,9 +76,27 @@ const RecipeDetails = () => {
                 <td><strong>Cooking Method: </strong> {instructions}</td>
               </tr>
               <tr>
-                <td><strong>Ratings: </strong> {Ratings}</td>
-                <td><strong>Ratings: </strong> {Ratings}</td>
-                <td><strong>Ratings: </strong> {Ratings}</td>
+                <td><Rating
+                  className='text-warning'
+                  placeholderRating={Ratings}
+                  emptySymbol={<FaRegStar />}
+                  placeholderSymbol={<FaStar />}
+                  fullSymbol={<FaStar />}
+                /></td>
+                <td><Rating
+                  className='text-warning'
+                  placeholderRating={Ratings}
+                  emptySymbol={<FaRegStar />}
+                  placeholderSymbol={<FaStar />}
+                  fullSymbol={<FaStar />}
+                /></td>
+                <td><Rating
+                  className='text-warning'
+                  placeholderRating={Ratings}
+                  emptySymbol={<FaRegStar />}
+                  placeholderSymbol={<FaStar />}
+                  fullSymbol={<FaStar />}
+                /></td>
               </tr>
               <tr>
                 <td><Button onClick={handleAddFavorite1} disabled={clicked1}>Add Favorite</Button></td>
