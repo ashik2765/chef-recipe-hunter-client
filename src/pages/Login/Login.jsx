@@ -7,7 +7,7 @@ import { signInWithPopup } from 'firebase/auth';
 
 
 const Login = () => {
-  const {signIn,auth,Googleprovider}= useContext(AuthContext);
+  const {signIn,auth,Googleprovider,GithubProvider}= useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/'
@@ -47,6 +47,17 @@ const Login = () => {
       setError(error.message)
     })
   }
+  const handleGithublogin=()=>{
+    signInWithPopup(auth,GithubProvider)
+    .then(result=>{
+      const githubLoggedUser = result.user;
+      console.log(githubLoggedUser);
+    })
+    .catch(error=>{
+      console.log(error.message)
+
+    })
+  }
   
   return (
     <Container className='w-25 mx-auto mt-5'>
@@ -74,7 +85,7 @@ const Login = () => {
           <div className='text-center'>
           <Button onClick={handleGoogleSignIn} className='w-100' variant="outline-secondary"><FaGoogle></FaGoogle><span className='ms-2'>Login With Google</span></Button> 
           <h4 className='text-center'>Or</h4>
-          <Button className='w-100' variant="outline-secondary"><FaGithub></FaGithub><span className='ms-2'>Login With Github</span></Button>
+          <Button onClick={handleGithublogin} className='w-100' variant="outline-secondary"><FaGithub></FaGithub><span className='ms-2'>Login With Github</span></Button>
           </div>
         </Form.Group>
         <Button className='w-100' variant="primary" type="submit">
