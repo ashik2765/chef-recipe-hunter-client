@@ -17,7 +17,7 @@ Click here for the Live Link: [https://classroom.github.com/a/1Xt5Fixs](https://
 ## [Server Site Vercel Link](https://classroom.github.com/a/1Xt5Fixs)
 Click here for the Vercel Link: [https://classroom.github.com/a/1Xt5Fixs](https://classroom.github.com/a/1Xt5Fixs)
 
-## [About Website]
+## About Website.
 
 * I use here react bootstrapp, react router, firebase.
 * it's deploy to the vercel and netlify.
