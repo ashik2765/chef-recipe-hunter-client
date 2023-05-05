@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Image, Table } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
-import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
 const RecipeDetails = () => {
   const chefdata = useLoaderData();
-  console.log(chefdata)
-  const { chef_name, chef_picture, id, likes, number_of_recipes, view_recipes_button, years_of_experience, bio, recipe_name, ingredients, instructions, recipes,recipe_table,recipe1,recipe2,recipe3,Ratings } = chefdata;
-  const handlefavorite =()=>{
-      console.log('it is working')
-  }
+  const [clicked1,setClicked1]= useState(false)
+  const [clicked2,setClicked2]= useState(false)
+  const [clicked3,setClicked3]= useState(false)
+  
+  const { chef_name, chef_picture,likes, years_of_experience, bio, ingredients, instructions,recipe1,recipe2,recipe3,Ratings } = chefdata;
 
+  const handleAddFavorite1 = ()=>{
+    setClicked1(true)
+  }
+  const handleAddFavorite2 = ()=>{
+    setClicked2(true)
+  }
+  const handleAddFavorite3 = ()=>{
+    setClicked3(true)
+  toast.success('Added to favorites!', { position: toast.POSITION.BOTTOM_RIGHT });
+  }
   return (
     <div>
       <div>
@@ -28,7 +40,7 @@ const RecipeDetails = () => {
                 <p><strong>{likes} Likes</strong></p>
                 <p><strong>Experience:</strong>{years_of_experience}Years</p>
                 <p><strong>Recipes:</strong> {recipe1},{recipe2},{recipe3}</p>
-                <Button variant="primary" size="lg">Follow</Button>
+                <Button variant="warning" size="lg">Follow</Button>
               </div>
             </Col>
           </Row>
@@ -62,9 +74,9 @@ const RecipeDetails = () => {
           <td><strong>Ratings: </strong> {Ratings}</td>
         </tr>
         <tr>
-          <td><Button>Add Favorite</Button></td>
-          <td><Button>Add Favorite</Button></td>
-          <td><Button>Add Favorite</Button></td>
+          <td><Button onClick={handleAddFavorite1} disabled={clicked1}>Add Favorite</Button></td>
+          <td><Button onClick={handleAddFavorite2} disabled={clicked2}>Add Favorite</Button></td>
+          <td><Button onClick={handleAddFavorite3} disabled={clicked3}>Add Favorite</Button></td>
         </tr>
       </tbody>
     </Table>

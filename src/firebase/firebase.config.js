@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyC4vlpBBTQp5QHZtYAPYFYF5ScXvfqawXU",
-  authDomain: "the-tabbakh-project.firebaseapp.com",
-  projectId: "the-tabbakh-project",
-  storageBucket: "the-tabbakh-project.appspot.com",
-  messagingSenderId: "379781630698",
-  appId: "1:379781630698:web:616715ceb4449b2ad46593"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

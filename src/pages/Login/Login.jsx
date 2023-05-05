@@ -20,12 +20,12 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password)
+    
 
     signIn(email,password)
     .then(result =>{
       const loggedUser = result.user;
-      console.log(loggedUser)
+     
       setSuccessful('login successful')
       navigate(from,{replace:true})
     })
@@ -48,13 +48,16 @@ const Login = () => {
     })
   }
   const handleGithublogin=()=>{
+    setError('')
+    setSuccessful('')
     signInWithPopup(auth,GithubProvider)
     .then(result=>{
       const githubLoggedUser = result.user;
-      console.log(githubLoggedUser);
+      setSuccessful('Github SignIn successfull')
+      
     })
     .catch(error=>{
-      console.log(error.message)
+      setError(error.message)
 
     })
   }

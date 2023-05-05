@@ -14,22 +14,24 @@ const ChefCard = ({chef}) => {
         <Card.Img variant="top" src={chef_picture} />
         <Card.Body>
           <Card.Title>{chef_name}</Card.Title>
+          
           <Card.Text>
-            {bio}
+          <strong> Number Of Recipes: </strong>{number_of_recipes}
           </Card.Text>
           <Card.Text>
-           Number Of Recipes: {number_of_recipes}
+            <strong>Experience: </strong>{years_of_experience} Years
           </Card.Text>
           <Card.Text>
-            Experience: {years_of_experience} Years
+            {years_of_experience} <strong>Likes</strong>
           </Card.Text>
          
         </Card.Body>
         <Card.Footer>
         <div className='d-flex'>
         <Link to={`/recipe/${id}`}>
-        <Button className='flex-grow-1' variant="secondary">View Recipes</Button>
+        <Button className='flex-grow-1' variant="warning">View Recipes</Button>
         </Link>
+        
         
 
         </div>

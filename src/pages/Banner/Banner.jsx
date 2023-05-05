@@ -18,7 +18,7 @@ const Banner = () => {
           <Container>
             <h1>Discover Your Next Favorite Recipe</h1>
             <p>Explore our curated collection of mouth-watering dishes from around the world.</p>
-            <button className="btn btn-primary">Browse Recipes</button>
+            <button className="btn btn-warning">Browse Recipes</button>
           </Container>
         </Carousel.Caption>
       </Carousel.Item>
@@ -32,7 +32,7 @@ const Banner = () => {
           <Container>
             <h1>Connect with Our Community</h1>
             <p>Share your favorite recipes, join discussions, and get inspired by fellow food lovers.</p>
-            <button className="btn btn-primary">Join Now</button>
+            <button className="btn btn-warning">Join Now</button>
           </Container>
         </Carousel.Caption>
       </Carousel.Item>
@@ -46,7 +46,7 @@ const Banner = () => {
           <Container>
             <h1>Create Your Own Masterpiece</h1>
             <p>Get inspired and experiment with your own recipes using our extensive database of ingredients.</p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn btn-warning">Get Started</button>
           </Container>
         </Carousel.Caption>
       </Carousel.Item>

@@ -21,7 +21,7 @@ const ErrorPage = () => {
                         {error?.message}
                     </p>
                     <Link to='/'>
-                        <Button variant="outline-secondary">
+                        <Button variant="outline-warning">
                             Back to homepage
                         </Button>
                     </Link>

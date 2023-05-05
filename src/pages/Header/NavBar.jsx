@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import ProPhoto from '../../assets/react.svg'
 import { AuthContext } from '../../AuthProvider';
 import './NavBar.css';
@@ -18,13 +18,13 @@ const NavBar = () => {
 
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-          <Navbar.Brand className='fw-bolder' href="#home"><h1>Tabbakh</h1></Navbar.Brand>
+          <Navbar.Brand className='fw-bolder text-warning' href="#home"><h1>Tabbakh</h1></Navbar.Brand>
 
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
-               <Link className='navlink' to='/'>Home</Link>
+              <NavLink className='active' to='/'>Home</NavLink>
               <Link className='navlink' to='/blog'>Blogs</Link>
               
 
@@ -36,9 +36,9 @@ const NavBar = () => {
               { user?
                   <div>
                      <Image className='me-4' src={ProPhoto} roundedCircle />
-                    <Link onClick={handleLogOut}><Button variant="secondary">LogOut</Button></Link>
+                    <Link onClick={handleLogOut}><Button variant="warning">LogOut</Button></Link>
                   </div>:
-                  <Link to="/login"><Button variant="secondary">Login</Button></Link>
+                  <Link to="/login"><Button variant="warning">Login</Button></Link>
               }
               
 
